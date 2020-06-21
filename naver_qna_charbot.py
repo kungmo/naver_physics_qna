@@ -78,7 +78,7 @@ tagged_questions = [TaggedDocument(d, [int(c)]) for d, c in index_questions]
 # 모델 불러오기
 
 d2v_faqs = doc2vec.Doc2Vec.load(
-    os.path.join('./data/d2v_faqs_size200_min5_epoch20_naver_physics_qna.model'))
+    os.path.join('./model/d2v_faqs_size200_min5_epoch20_naver_physics_qna.model'))
 
 # 챗봇 형태로 연속된 질문 받기
 

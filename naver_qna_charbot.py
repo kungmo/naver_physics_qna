@@ -13,6 +13,7 @@ import warnings
 from gensim.models import doc2vec
 from gensim.models.doc2vec import TaggedDocument
 import pandas as pd
+import jpype
 
 # csv 파일 불러오기 (사전작업은 노트북에서 주피터 노트북 켜고 data_extraction.ipynb으로 함)
 faqs = pd.read_csv(os.path.join('./data/total.csv'), sep="\t", encoding='UTF8')
@@ -35,7 +36,6 @@ for i in range(0, len(faqs)):  # 질문-답변 행 개수만큼 반복
         df2.at[qna_num, '답변'] = df2_temp  # qna_num에 해당하는 데이터프레임의 답변 열에 답변 입력
 
 from konlpy.tag import Mecab
-import jpype
 
 mecab = Mecab()
 text = u"""이제 구글 코랩에서 Mecab-ko라이브러리 사용이 가능합니다. 읽어주셔서 감사합니다."""
